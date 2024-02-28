@@ -20,17 +20,19 @@ function Home() {
   return (
     <>
       <Header />
-      <Row className='ms-5' style={{ marginTop: "100px" }}>
+      <Row className='m-5' style={{ marginTop: "100px",justifyContent:"space-around",display:"flex" }}>
         {data?.length > 0 &&
           data.map((product, index) => 
           ( 
-            <Col key={index}>
-              <Card style={{ width: '20rem' }}>
-                <Card.Img  height={"200px"} variant="top" src={product?.thumbnail} />
+            <Col key={index} className='m-3'>
+              <Card style={{ width: '20rem',height:'450px', 
+              border: '1px solid #e0e0e0',borderRadius: '10px',
+             }}>
+                <Card.Img  height={"160px"} variant="top" src={product?.thumbnail} />
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
-                  <Card.Text style={{textAlign:"justify",height:"100px"}}>{product.description.slice(0,60)}</Card.Text>
-                  <Button className='me-3' variant="warning" onClick={()=>{
+                  <Card.Text style={{textAlign:"justify",height:"100px"}}>{product.description.slice(0,70)}</Card.Text>
+                  <Button className='me-2' variant="warning" onClick={()=>{
                      console.log('Button clicked');
                     dispatch(addToCart(product));
                     console.log('Add to Cart',)}}>

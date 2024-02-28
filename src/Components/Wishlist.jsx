@@ -25,8 +25,8 @@ dispatch(removeFromWishlist(product.id))
       <Row>
         {wishlistArray.length > 0 ?
           wishlistArray.map((product, index) => (
-            <Col key={index}>
-              <Card style={{ width: '20rem' }}>
+          
+              <Card className='m-3' key={index} style={{ width: '20rem' }}>
                 <Card.Img height={'200px'} variant="top" src={product?.thumbnail} />
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
@@ -41,7 +41,7 @@ dispatch(removeFromWishlist(product.id))
                   </Button>
                 </Card.Body>
               </Card>
-            </Col>
+          
           )):
           
           <div>
