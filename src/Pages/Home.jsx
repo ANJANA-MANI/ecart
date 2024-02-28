@@ -25,21 +25,20 @@ function Home() {
           data.map((product, index) => 
           ( 
             <Col key={index} className='m-3'>
-              <Card style={{ width: '20rem',height:'450px', 
+              <Card style={{ width: '20rem',height:'', 
               border: '1px solid #e0e0e0',borderRadius: '10px',
              }}>
-                <Card.Img  height={"160px"} variant="top" src={product?.thumbnail} />
+                <Card.Img className='p-2' height={"160px"} variant="top" src={product?.thumbnail} />
                 <Card.Body>
-                  <Card.Title>{product.title}</Card.Title>
-                  <Card.Text style={{textAlign:"justify",height:"100px"}}>{product.description.slice(0,70)}</Card.Text>
+                  <Card.Title  className='w-100'>{product.title}</Card.Title>
+                  <Card.Text style={{textAlign:"justify",height:"50px"}}>{product.description.slice(0,65)}</Card.Text>
                   <Button className='me-2' variant="warning" onClick={()=>{
-                     console.log('Button clicked');
                     dispatch(addToCart(product));
-                    console.log('Add to Cart',)}}>
+                   }}>
                     <i className="fa-solid fa-cart-shopping"></i>
                   </Button>
                   <Button variant="danger"onClick={()=>{
-                     console.log('Button clicked');
+                    
                     dispatch(addToWishlist(product));
                     console.log('WISHLIST',wishlist)}}>
                     <i className="fa-regular fa-heart"></i>
